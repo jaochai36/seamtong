@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Pop-up Overlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: transparent;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .popup-content {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .popup-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      background: rgba(0,0,0,0.4);
+      padding: 5px 10px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup-overlay" onclick="window.open('https://formyking.ocsc.go.th/gorvernment.php')">
+    <div class="popup-content">
+      <img src="https://www.ocsc.go.th/wp-content/uploads/2025/07/เพิ่มหัวเรื่อง-2295-x-2295-px-1.x46727.jpg" alt="Banner">
+      <span class="close-btn" onclick="event.stopPropagation();this.parentElement.parentElement.style.display='none';">×</span>
+    </div>
+  </div>
+</body>
+</html>
